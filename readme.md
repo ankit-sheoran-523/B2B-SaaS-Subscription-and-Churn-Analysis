@@ -70,6 +70,7 @@ COUNTROWS(
 ```
 ---
 ### 2. User Journey Funnel
+
 Drop‑off rates from sign‑up to retention:
 ```dax
 SignUps = DISTINCTCOUNT(accounts[account_id])
@@ -88,6 +89,7 @@ Support → Retained
 ---
 
 ### 3. Core SaaS Financials
+
 ```
 dax
 Active_mrr = CALCULATE(SUM(subscriptions[mrr_amount]), accounts[churn_flag] = FALSE())
@@ -96,7 +98,9 @@ Net Revenue Retention % = DIVIDE([mrr] + [upgradedmrr] - [downgradedmrr] - [chur
 ---
 
 ## Dashboard Suite & Insights
+
 ### 1. Executive Dashboard (Financial Health)
+
 KPIs: $8.98M Active MRR | $107.8M ARR | 96.09% NRR | 22% Logo Churn.
 
 Insight: High NRR but high logo churn → dependency on Enterprise expansions, while Basic/Pro quietly bleed out.
@@ -106,6 +110,7 @@ Action: Launch small‑account retention programs.
 ---
 
 ### 2. Product Engagement Dashboard
+
 KPIs: 251K sessions | 14K errors.
 
 Insight: Funnel bottleneck → 98.4% of users forced into support, retention drops to 78%. Feature_26 & feature_9 unstable.
@@ -115,22 +120,22 @@ Action: Patch error‑prone modules, improve onboarding/self‑serve.
 ---
 
 ### 3. Customer Stability & Churn Predictor
+
 KPIs: Avg Risk Score 70 | Resolution Time 35.86 hrs | Escalation 4.75%.
 
 Insight: Product instability + slow support → predictable churn.
 
 Action: Use “Accounts at Risk” table for proactive save‑calls.
 
----
-
 ## Execution Playbook (FY2026)
-Engineering Triage: Halt new features, hotfix feature_26 & feature_32.
 
-Support SLA: Reduce resolution time from 35.8 hrs → <12 hrs.
-
-Automated Outreach: Integrate Predictive Risk Score into CRM alerts.
+- Engineering Triage: Halt new features, hotfix feature_26 & feature_32.
+- Support SLA: Reduce resolution time from 35.8 hrs → <12 hrs.
+- Automated Outreach: Integrate Predictive Risk Score into CRM alerts.
 
 ---
+
+
 
 ## Dataset Credit
 Synthetic B2B SaaS dataset inspired by River @ Rivalytics.
